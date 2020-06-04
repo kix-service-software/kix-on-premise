@@ -62,6 +62,8 @@ If you want to use SSL **additionally** to non-SSL please do the following
  - `./update.sh`
 
 ## Restart Services
+- change to extracted directory
+  - `cd /opt/kix-on-premise`
 - execute restart script without any parameter to restart all services
  - `./restart.sh`
 - execute restart script with the desired service to restart
