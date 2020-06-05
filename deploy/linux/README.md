@@ -11,9 +11,7 @@
 - 4 GB RAM
 
 ## Get Docker Environment Configuration
-- create directory for your kix-on-premise installation
-  - `cd /opt && mkdir kix-on-premise && cd ./kix-on-premise`
-- get initial docker environment setup - 
+- get initial docker environment setup 
   - `cd /opt`
   - `git clone https://github.com/cape-it/kix-on-premise.git`
 - change to extracted directory
