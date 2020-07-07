@@ -14,11 +14,8 @@
 
 ## Get Docker Environment Configuration
 - create directory for your kix-on-premise installation
-- get initial docker environment setup
-  - download and unzip
-      - `https://download.kixdesk.com/kix-on-premise.tar.gz`
-  - option b) clone from github
-      - `git clone https://github.com/cape-it/kix-on-premise.git`
+- get initial docker environment setup - 
+  - `git clone https://github.com/cape-it/kix-on-premise.git`
 - change to extracted directory
   - `cd kix-on-premise`
 
@@ -27,8 +24,12 @@
 - you may change the default ports under which you connect to KIX
   - `BACKEND_PORT` (Default: 20000)
   - `FRONTEND_PORT` (Default: 20001)
+  - `SSP_PORT_SSL` (Default: 20002) (Self Service Portal - only for KIX Pro)
   - `BACKEND_PORT_SSL` (Default: 20443)
   - `FRONTEND_PORT_SSL` (Default: 20444)
+  - `SSP_PORT_SSL` (Default: 20445) (Self Service Portal - only for KIX Pro)
+- in case you want to use KIX Pro, change the docker-registry to
+  - `REGISTRY=docker-registry.kixdesk.com/customers/<YOURREPOSITORYIDHERE>`
 
 ### SSL
 If you want to use SSL **instead** of non-SSL just do the following
