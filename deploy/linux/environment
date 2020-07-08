@@ -27,7 +27,7 @@ BACKEND_PORT_SSL=20443
 KIXDB_HOST=db			
 
 # change this to "mysql" if you are connecting to a mysql/mariadb/percona server
-KIXDB_DBMS=postgresql		
+KIXDB_DBMS=postgresql
 
 KIXDB_DATABASE=kix
 KIXDB_USER=kix
