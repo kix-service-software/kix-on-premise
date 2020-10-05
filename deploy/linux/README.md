@@ -44,25 +44,25 @@ If you want to use SSL **additionally** to non-SSL please do the following
 
 ## Start KIX
 - change to extracted directory
-  - `cd /opt/kix-on-premise`
+  - `cd /opt/kix-on-premise/deploy/linux`
 - execute start script
  - `./start.sh`
 
 ## Stop KIX
 - change to extracted directory
-  - `cd /opt/kix-on-premise`
+  - `cd /opt/kix-on-premise/deploy/linux`
 - execute stop script
  - `./stop.sh`
 
 ## Update KIX
 - change to extracted directory
-  - `cd /opt/kix-on-premise`
+  - `cd /opt/kix-on-premise/deploy/linux`
 - execute update script
  - `./update.sh`
 
 ## Restart Services
 - change to extracted directory
-  - `cd /opt/kix-on-premise`
+  - `cd /opt/kix-on-premise/deploy/linux`
 - execute restart script without any parameter to restart all services
  - `./restart.sh`
 - execute restart script with the desired service to restart
@@ -72,7 +72,7 @@ If you want to use SSL **additionally** to non-SSL please do the following
 ## Accessing Stack Logs
 In case you need to monitor your stack, you can do so with the following script. All Information are printed to `STDOUT`.
 - change to extracted directory
-  - `cd /opt/kix-on-premise`
+  - `cd /opt/kix-on-premise/deploy/linux`
 - execute logging script
  - `./logs.sh`
 
