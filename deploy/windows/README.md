@@ -45,25 +45,25 @@ If you want to use SSL **additionally** to non-SSL please do the following
 
 ## Start KIX
 - change to extracted directory
-  - `cd /opt/kix-on-premise/deploy/windows`
+  - `cd /kix-on-premise/windows`
 - execute start script
  - `start.ps1`
 
 ## Stop KIX
 - change to extracted directory
-  - `cd /opt/kix-on-premise/deploy/windows`
+  - `cd /kix-on-premise/windows`
 - execute stop script
  - `stop.ps1`
 
 ## Update KIX
 - change to extracted directory
-  - `cd /opt/kix-on-premise/deploy/windows`
+  - `cd /kix-on-premise/windows`
 - execute update script
  - `update.ps1`
 
 ## Restart Services
 - change to extracted directory
-  - `cd /opt/kix-on-premise/deploy/windows`
+  - `cd /kix-on-premise/windows`
 - execute restart script without any parameter to restart all services
  - `restart.ps1`
 - execute restart script with the desired service to restart
@@ -71,7 +71,7 @@ If you want to use SSL **additionally** to non-SSL please do the following
 
 ## Accessing Stack Logs
 - change to extracted directory
-  - `cd /opt/kix-on-premise/deploy/windows`
+  - `cd /kix-on-premise/windows`
 In case you need to monitor your stack, you can do so with the following script. All Information are printed to `STDOUT`.
 - execute logging script
  - `logs.ps1`
