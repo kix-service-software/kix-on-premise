@@ -35,10 +35,11 @@ If you want to use SSL **instead** of non-SSL just do the following
 - comment out everything in `proxy/non-ssl.conf`
 - uncomment everything in `proxy/ssl.conf`
 - copy your certificate, key and ca-bundle into the directory `proxy/ssl/certs`
+**ATTENTION:** in this case the application ports are still the non-SSL ports (drop-in replacement)
 
 If you want to use SSL **additionally** to non-SSL please do the following
 - uncomment everything in `proxy/ssl.conf`
-- change the port setting in `proxy/ssl.conf` from `80` to `443` and from `8080` to `8443`
+- change the port setting in `proxy/ssl.conf` from `80` to `443`, from `8080` to `8443` and from `9080` to `9443`
 - copy your certificate, key and ca-bundle into the directory `proxy/ssl/certs`
 
 
