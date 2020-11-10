@@ -20,7 +20,7 @@ Assuming following key indicators
 We recommend a docker host with
 - RAM: 8GB
 - CPU: min. 4 cores
-- some well performing storage (please, no single SATA)
+- some well performing storage (please, no single low rpm SATA HDD)
 - Debian or Ubuntu LTS with a lean server installation (as Docker host)
 
 ---
