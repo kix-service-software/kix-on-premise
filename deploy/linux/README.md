@@ -80,6 +80,8 @@ Choosing this setup uses application ports defined in `BACKEND_PORT`, `FRONTEND_
   - from `8080` to `8443`
   - from `9080` to `9443`
 
+Choosing this setup uses application ports defined in BACKEND_PORT_SSL, FRONTEND_PORT_SSL, SSP_PORT_SSL in addition to the non-SSL ports.
+
 ---
 ## Running KIX
 
