@@ -19,10 +19,6 @@ services:
       - ./proxy/ssl:/etc/nginx/conf.d/ssl
       - ./proxy/non-ssl.conf:/etc/nginx/conf.d/non-ssl.conf
       - ./proxy/ssl.conf:/etc/nginx/conf.d/ssl.conf
-    deploy:
-      replicas: 1
-      restart_policy:
-        condition: on-failure
     logging:
       options:
         max-size: "100m"
@@ -39,10 +35,6 @@ services:
       - ./backend:/opt/kix/conf.d
       - shared:/mnt/shared
       - backend:/mnt/data
-    deploy:
-      replicas: 1
-      restart_policy:
-        condition: on-failure
     logging:
       options:
         max-size: "100m"
@@ -66,10 +58,6 @@ services:
     volumes:
       - shared:/mnt/shared
       - frontend:/mnt/data
-    deploy:
-      replicas: 1
-      restart_policy:
-        condition: on-failure
     logging:
       options:
         max-size: "100m"
@@ -82,19 +70,11 @@ services:
     volumes:
       - db:/var/lib/postgresql/data
       - ./db/postgresql.conf:/etc/postgresql/postgresql.conf
-    deploy:
-      replicas: 1
-      restart_policy:
-        condition: any
     shm_size: '2gb'
     
 
   redis:
     image: ${REGISTRY}/redis:${IMAGE_TAG}
-    deploy:
-      replicas: 1
-      restart_policy:
-        condition: any
 
 volumes:
     shared:
