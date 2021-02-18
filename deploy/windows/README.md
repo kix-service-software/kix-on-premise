@@ -109,6 +109,15 @@ Choosing this setup uses application ports defined in `BACKEND_PORT`, `FRONTEND_
 - execute restart script with the desired service to restart
  - `restart.ps1 backend`
 
+
+### Using KIX
+You may now connect to KIX via Browser to `http://your.docker.host:20001` or to the REST-API using `curl` (e.g) on `http://your.docker.host:20000`.
+
+The initial user account is usr `admin` with password `Passw0rd`. Please change that immediately after installation.
+
+For user and administration manuals checkout `https://docs.kixdesk.com`.
+
+
 ### Accessing Stack Logs
 - change to extracted directory
   - `cd /kix-on-premise/windows`

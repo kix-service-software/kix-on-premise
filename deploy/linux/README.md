@@ -111,6 +111,13 @@ Choosing this setup uses application ports defined in BACKEND_PORT_SSL, FRONTEND
 - execute restart script with the desired service to restart
  - `./restart.sh backend`
 
+### Using KIX
+You may now connect to KIX via Browser to `http://your.docker.host:20001` or to the REST-API using `curl` (e.g) on `http://your.docker.host:20000`.
+
+The initial user account is usr `admin` with password `Passw0rd`. Please change that immediately after installation.
+
+For user and administration manuals checkout `https://docs.kixdesk.com`.
+
 
 ### Accessing Stack Logs
 In case you need to monitor your stack, you can do so with the following script. All Information are printed to `STDOUT`.
