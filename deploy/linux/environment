@@ -2,8 +2,11 @@
 # basic configuration
 # --------------------------------------------------
 
-# the docker registry to use 
+# the docker registry to use
 REGISTRY=docker-registry.kixdesk.com/public
+
+# the following applies for KIX Pro customers
+#REGISTRY=docker-registry.kixdesk.com/customers/<YOURREPOSITORYIDHERE>
 
 # the image tag to use for all application images
 IMAGE_TAG=stable
@@ -24,7 +27,7 @@ BACKEND_PORT_SSL=20443
 
 # database connection (see below)
 # only change this if you are connecting to an external DBMS
-KIXDB_HOST=db			
+KIXDB_HOST=db
 
 # change this to "mysql" if you are connecting to a mysql/mariadb/percona server
 KIXDB_DBMS=postgresql
