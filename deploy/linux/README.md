@@ -30,10 +30,12 @@ We recommend a docker host with
   - `cd /opt`
   - `git clone https://github.com/cape-it/kix-on-premise.git`
 - change to extracted directory
-  - `cd kix-on-premise`
+  - `cd kix-on-premise/deploy/linux`
 
-**NOTE**: Keep in mind, that updating the docker environment might be recommended or even required with upcoming releases of KIX. Creating a copy of your `environment`, `non-ssl.conf` and `ssl.conf` file is recommended in order to prevent loss upon updates of the docker environment setup.
+If it happens that you are running KIX on a macOS docker host, you may use linux settings.
 
+**RECOMMENDATION**
+Updating the docker environment might be recommended or even required in future releases of KIX. Therefore, creating a backup of your `environment`, `non-ssl.conf` and `ssl.conf` files is recommended.
 
 ---
 
@@ -98,10 +100,23 @@ Choosing this setup uses application ports defined in BACKEND_PORT_SSL, FRONTEND
  - `./stop.sh`
 
 ### Update KIX
+- execute stop script
+ - `./stop.sh`
+- change to kix-on-premise directory and update docker setup
+  - `cd /opt/kix-on-premise`
+  - `git pull`
+- change to extracted directory
+  - `cd /opt/kix-on-premise/deploy/linux`
+- execute start script
+ - `./start.s`
+
+A slighlty shorter way ist to execute the update script. However, if any changes need to be applied to the docker setup, they might be ignored, causing some issues. If you encounter them, please apply the preferred approach.
 - change to extracted directory
   - `cd /opt/kix-on-premise/deploy/linux`
 - execute update script
  - `./update.sh`
+
+
 
 ### Restart Services
 - change to extracted directory
