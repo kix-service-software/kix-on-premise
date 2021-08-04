@@ -17,8 +17,9 @@ cd docker
 #export IMAGE_TAG=dev
 #./internal.sh
 
-export BACKEND_BUILD_TAG=build-kix17-migration
+export BACKEND_BUILD_TAG=build-rel-18_FEATURE
 export FRONTEND_BUILD_TAG=build-rel-18_FEATURE
+export SSP_BUILD_TAG=build-rel-18_FEATURE
 export IMAGE_TAG=exp
 ./internal.sh
 
