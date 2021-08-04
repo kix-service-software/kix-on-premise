@@ -84,13 +84,13 @@ Choosing this setup uses application ports defined in `BACKEND_PORT`, `FRONTEND_
 
 ### Start KIX
 - change to extracted directory
-  - `cd /opt/kix-on-premise/deploy/windows`
+  - `cd /kix-on-premise/windows`
 - execute start script
  - `start.ps1`
 
 ### Stop KIX
 - change to extracted directory
-  - `cd /opt/kix-on-premise/deploy/windows`
+  - `cd /kix-on-premise/windows`
 - execute stop script
  - `stop.ps1`
 
@@ -101,6 +101,9 @@ Choosing this setup uses application ports defined in `BACKEND_PORT`, `FRONTEND_
   - `cd /opt/kix-on-premise`
   - `git pull`
 - change to extracted directory
+<<<<<<< HEAD
+  - `cd /kix-on-premise/windows`
+=======
   - `cd /opt/kix-on-premise/deploy/linux`
 - execute start script
  - `start.ps1`
@@ -108,13 +111,14 @@ Choosing this setup uses application ports defined in `BACKEND_PORT`, `FRONTEND_
 A slighlty shorter way ist to execute the update script. However, if any changes need to be applied to the docker setup, they might be ignored, causing some issues. If you encounter them, please apply the preferred approach.
 - change to extracted directory
   - `cd /opt/kix-on-premise/deploy/linux`
+>>>>>>> cfcde7eca3eedb54148196ad9dcc89aa0078d320
 - execute update script
  - `update.ps1`
 
 
 ### Restart Services
 - change to extracted directory
-  - `cd /opt/kix-on-premise/deploy/windows`
+  - `cd /kix-on-premise/windows`
 - execute restart script without any parameter to restart all services
  - `restart.ps1`
 - execute restart script with the desired service to restart
@@ -131,7 +135,7 @@ For user and administration manuals checkout `https://docs.kixdesk.com`.
 
 ### Accessing Stack Logs
 - change to extracted directory
-  - `cd /opt/kix-on-premise/deploy/windows`
+  - `cd /kix-on-premise/windows`
 In case you need to monitor your stack, you can do so with the following script. All Information are printed to `STDOUT`.
 - execute logging script
  - `logs.ps1`
