@@ -137,7 +137,7 @@ For user and administration manuals checkout `https://docs.kixdesk.com`.
 ### Accessing Stack Logs
 In case you need to monitor your stack, you can do so with the following script. All Information are printed to `STDOUT`.
 - change to extracted directory
-  - `cd kix-on-premise/linux`
+  - `cd kix-on-premise/deploy/linux`
 - execute logging script
  - `./logs.sh`
 
