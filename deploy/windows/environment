@@ -3,7 +3,7 @@
 # --------------------------------------------------
 
 # the docker registry to use
-REGISTRY=docker-registry.kixdesk.com/public
+# REGISTRY=docker-registry.kixdesk.com/public
 
 # the following applies for KIX Pro customers
 #REGISTRY=docker-registry.kixdesk.com/customers/<YOURREPOSITORYIDHERE>
