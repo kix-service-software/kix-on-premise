@@ -95,24 +95,11 @@ Choosing this setup uses application ports defined in `BACKEND_PORT`, `FRONTEND_
  - `stop.ps1`
 
 ### Update KIX
+- change to extracted directory
+  - `cd /kix-on-premise/windows`
 - execute stop script
  - `stop.ps1`
-- change to kix-on-premise directory and update docker setup
-  - `cd /opt/kix-on-premise`
-  - `git pull`
-- change to extracted directory
-<<<<<<< HEAD
-  - `cd /kix-on-premise/windows`
-=======
-  - `cd /opt/kix-on-premise/deploy/linux`
-- execute start script
- - `start.ps1`
-
-A slighlty shorter way ist to execute the update script. However, if any changes need to be applied to the docker setup, they might be ignored, causing some issues. If you encounter them, please apply the preferred approach.
-- change to extracted directory
-  - `cd /opt/kix-on-premise/deploy/linux`
->>>>>>> cfcde7eca3eedb54148196ad9dcc89aa0078d320
-- execute update script
+- execute stop script
  - `update.ps1`
 
 
@@ -159,7 +146,6 @@ The following services use volumes created on the first startup to store their p
 ---
 
 # Using Another Data Base System
-
 If you prefer using KIX with another database or an existing DB-Server, than the provided in this setup you may do so. In order to use another DBMS following settings in your `environment` file must be changed according to your needs **before KIX ist started the first time** (!). During the first startup the DB-connection is written permanently into the backend service. If you missed that point, just remove alle existing containers (which includes data as well) and start over.
 
 ```
