@@ -89,13 +89,13 @@ Choosing this setup uses application ports defined in BACKEND_PORT_SSL, FRONTEND
 
 ### Start KIX
 - change to extracted directory
-  - `cd kix-on-premise/linux`
+  - `cd kix-on-premise/deploy/linux`
 - execute start script
  - `./start.sh`
 
 ### Stop KIX
 - change to extracted directory
-  - `cd kix-on-premise/linux`
+  - `cd kix-on-premise/deploy/linux`
 - execute stop script
  - `./stop.sh`
 
@@ -112,7 +112,7 @@ Choosing this setup uses application ports defined in BACKEND_PORT_SSL, FRONTEND
 
 A slighlty shorter way ist to execute the update script. However, if any changes need to be applied to the docker setup, they might be ignored, causing some issues. If you encounter them, please apply the preferred approach.
 - change to extracted directory
-  - `cd kix-on-premise/linux`
+  - `cd kix-on-premise/deploy/linux`
 - execute update script
  - `./update.sh`
 
@@ -120,7 +120,7 @@ A slighlty shorter way ist to execute the update script. However, if any changes
 
 ### Restart Services
 - change to extracted directory
-  - `cd kix-on-premise/linux`
+  - `cd kix-on-premise/deploy/linux`
 - execute restart script without any parameter to restart all services
  - `./restart.sh`
 - execute restart script with the desired service to restart
@@ -137,7 +137,7 @@ For user and administration manuals checkout `https://docs.kixdesk.com`.
 ### Accessing Stack Logs
 In case you need to monitor your stack, you can do so with the following script. All Information are printed to `STDOUT`.
 - change to extracted directory
-  - `cd kix-on-premise/linux`
+  - `cd kix-on-premise/deploy/linux`
 - execute logging script
  - `./logs.sh`
 
