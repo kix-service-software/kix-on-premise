@@ -17,10 +17,10 @@ cd docker
 #export IMAGE_TAG=dev
 #./internal.sh
 
-export BACKEND_BUILD_TAG=build-rel-18
-export FRONTEND_BUILD_TAG=build-rel-18
-export SSP_BUILD_TAG=build-rel-18
-export IMAGE_TAG=rc
+export BACKEND_BUILD_TAG=build-rel-18_FEATURE
+export FRONTEND_BUILD_TAG=build-rel-18_FEATURE
+export SSP_BUILD_TAG=build-rel-18_FEATURE
+export IMAGE_TAG=dev
 ./internal.sh
 
 
