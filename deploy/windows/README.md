@@ -2,7 +2,7 @@
 
 ## Prerequisites
 - Install Docker on your host system
-  - see https://docs.docker.com/install/
+  - see https://docs.docker.com/engine/install/
 - install Docker-Compose on your host system
   - see https://docs.docker.com/compose/install/
 
@@ -18,10 +18,13 @@ Assuming following key indicators
 - ticket growth of 1k per month
 - 20-30 agent users, 10-15 concurrent
 - up to 10000 assets
-- 500 organisations and 5000 contacts
-we recommend 
+- 500 organisations and  5000 contacts
+
+We recommend a docker host with
 - RAM: 16GB
 - CPU: min. 4 cores
+- some well performing storage (i.e. no single, low rpm SATA HDD)
+- Debian or Ubuntu LTS with a lean server installation (as Docker host)
 
 ---
 
