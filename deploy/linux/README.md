@@ -2,13 +2,13 @@
 
 ## Prerequisites
 - Install Docker on your host system
-  - see https://docs.docker.com/install/
+  - see https://docs.docker.com/engine/install/
 - install Docker-Compose on your host system
   - see https://docs.docker.com/compose/install/
 
 ### Minimal System Requirements
-- Dual Core CPU
-- 4 GB RAM
+- 4 Core CPU
+- 8 GB RAM
 
 ### Recommended System Sizing
 Assuming following key indicators
@@ -18,9 +18,9 @@ Assuming following key indicators
 - 500 organisations and  5000 contacts
 
 We recommend a docker host with
-- RAM: 8GB
+- RAM: 16GB
 - CPU: min. 4 cores
-- some well performing storage (please, no single low rpm SATA HDD)
+- some well performing storage (i.e. no single, low rpm SATA HDD)
 - Debian or Ubuntu LTS with a lean server installation (as Docker host)
 
 ---
