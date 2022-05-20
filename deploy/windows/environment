@@ -1,0 +1,66 @@
+# --------------------------------------------------
+# basic configuration
+# --------------------------------------------------
+
+# the docker registry to use
+# REGISTRY=docker-registry.kixdesk.com/public
+
+# the following applies for KIX Pro customers
+#REGISTRY=docker-registry.kixdesk.com/customers/<YOURREPOSITORYIDHERE>
+
+# the image tag to use for all application images
+IMAGE_TAG=stable
+
+# name of the application stack (you need to change this if you want to deploy multiple KIX applications, each one has to have it's own name)
+NAME=kix
+
+# --------------------------------------------------
+# backend service configuration
+# --------------------------------------------------
+
+# the initial password of the 'admin' account (if empty, the default password is "Passw0rd")
+INITIAL_ADMIN_PW=
+
+# the port on the docker host system where the backend service is listening
+BACKEND_PORT=20000
+BACKEND_PORT_SSL=20443
+
+# database connection (see below)
+# only change this if you are connecting to an external DBMS
+KIXDB_HOST=db
+
+# change this to "mysql" if you are connecting to a mysql/mariadb/percona server
+KIXDB_DBMS=postgresql
+
+KIXDB_DATABASE=kix
+KIXDB_USER=kix
+KIXDB_PASSWORD=kix
+
+# --------------------------------------------------
+# frontend service configuration
+# --------------------------------------------------
+
+# the port on the docker host system where the frontend service is listening
+FRONTEND_PORT=20001
+FRONTEND_PORT_SSL=20444
+
+# frontend logging (0=ERROR, 1=WARNING, 2=INFO, 3=DEBUG)
+LOG_LEVEL=2
+
+# --------------------------------------------------------
+# Self Service Portal service configuration (if available)
+# --------------------------------------------------------
+
+# the port on the docker host system where the ssp service is listening
+SSP_PORT=20002
+SSP_PORT_SSL=20445
+
+# --------------------------------------------------
+# DB service configuration
+# --------------------------------------------------
+
+# this initializes a database and user for the application
+# if you change this you need to change the connection configuration of the backend (see above) as well
+POSTGRES_DB=kix
+POSTGRES_USER=kix
+POSTGRES_PASSWORD=kix
