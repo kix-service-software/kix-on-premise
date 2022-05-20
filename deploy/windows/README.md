@@ -6,11 +6,14 @@
 - install Docker-Compose on your host system
   - see https://docs.docker.com/compose/install/
 
-### Minimal System Requirements
-- 4 Core CPU
-- 8 GB RAM
-
 ### Recommended System Sizing
+
+for a new setup we recommend a docker host with
+- RAM: 8GB
+- CPU: 4 cores
+- some well performing storage (please, no single low rpm SATA HDD)
+- Debian or Ubuntu LTS with a lean server installation (as Docker host)
+
 Assuming following key indicators
 - ticket growth of 1k per month
 - 20-30 agent users, 10-15 concurrent
