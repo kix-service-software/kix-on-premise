@@ -149,6 +149,7 @@ The following services use volumes created on the first startup to store their p
 ---
 
 # Using Another Data Base System
+
 If you prefer using KIX with another database or an existing DB-Server, than the provided in this setup you may do so. In order to use another DBMS following settings in your `environment` file must be changed according to your needs **before KIX ist started the first time** (!). During the first startup the DB-connection is written permanently into the backend service. If you missed that point, just remove alle existing containers (which includes data as well) and start over.
 
 ```
@@ -159,10 +160,32 @@ KIXDB_PASSWORD=<kixdbuserpw>
 KIXDB_HOST=<dbhost>
 ```
 
-The data base `<kixdbname>` must be pre-created using utf8-encoding, empty, completely writable and accessible by DB-user `<kixdbuser>` with password `<kixdbuserpw>`.
+The data base `<kixdbname>` must be pre-created using utf8 encoding, empty, owned by DB-user `<kixdbuser>` with password `<kixdbuserpw>`. Furthermore DB-user `<kixdbuser>` must have Superuser role assigned in order to activate the pg_trgm extension.
 
 **NOTE** using another DBMS than PostgreSQL in version 12 or 13 is **NOT** recommended. Although `mysql` is yet a valid selection for param `KIXDB_DBMS` it may be removed in future releases.
 
+
+## Preparing PostgreSQL DBMS
+
+Connect to your PostgreSQL DBMS using the default database postgres, create the kixdbuser with password and create the KIX-DB:
+
+```
+postgres=# CREATE ROLE kixdbuser WITH LOGIN PASSWORD 'kixdbuserpw';
+postgres=# ALTER ROLE kixdbuser CREATEDB;
+postgres=# ALTER USER kixdbuser WITH SUPERUSER;
+postgres=# CREATE DATABASE kixdbname OWNER kixdbuser;
+```
+
+Take care of adding the new users account to your `pg_hba.conf`, e.g.
+```
+host    all             kixdbuser             0.0.0.0/0            md5
+```
+
+Also do not forget to enable `port 5432` and `listen_addresses` in your `postgresql.conf`.
+
+
 ---
+
+
 
 ...one more thing: how about joining the KIX user community via https://forum.kixdesk.com ? :-)
