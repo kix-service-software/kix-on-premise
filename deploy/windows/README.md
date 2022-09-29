@@ -3,8 +3,9 @@
 ## Prerequisites
 - Install Docker on your host system
   - see https://docs.docker.com/engine/install/
-- install Docker-Compose on your host system
-  - see https://docs.docker.com/compose/install/
+- install Docker-Compose as stand alone on your host system
+  - see https://docs.docker.com/compose/install/other/
+  - Although newer Docker release include Compose as plugin, not al host operating systems do eomply these new versions. Therefore it is required to have Compose installed as stand alone, not as plugin. 
 
 ### Recommended System Sizing
 
