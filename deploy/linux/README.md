@@ -5,7 +5,7 @@
   - see https://docs.docker.com/engine/install/
 - install Docker-Compose as stand alone on your host system
   - see https://docs.docker.com/compose/install/other/
-  - Although newer Docker release include Compose as plugin, not al host operating systems do eomply these new versions. Therefore it is required to have Compose installed as stand alone, not as plugin. 
+  - Although newer Docker release include Compose as plugin, not al host operating systems do eomply these new versions. Therefore it is required to have Compose installed as stand alone, not as plugin.
 
 ### Recommended System Sizing
 
@@ -111,14 +111,9 @@ Choosing this setup uses application ports defined in BACKEND_PORT_SSL, FRONTEND
   - `git pull`
 - change to extracted directory
   - `cd /opt/kix-on-premise/deploy/linux`
-- execute start script
- - `./start.s`
-
-A slighlty shorter way ist to execute the update script. However, if any changes need to be applied to the docker setup, they might be ignored, causing some issues. If you encounter them, please apply the preferred approach.
-- change to extracted directory
-  - `cd kix-on-premise/deploy/linux`
-- execute update script
+- execute update script (checks for new images, downloads them and starts KIX)
  - `./update.sh`
+
 
 
 
@@ -175,7 +170,7 @@ KIXDB_HOST=<dbhost>
 
 The data base `<kixdbname>` must be pre-created using utf8 encoding, empty, owned by DB-user `<kixdbuser>` with password `<kixdbuserpw>`. Furthermore DB-user `<kixdbuser>` must have Superuser role assigned in order to activate the pg_trgm extension.
 
-**NOTE** using another DBMS than PostgreSQL in version 12 or 13 is **NOT** recommended. Although `mysql` is yet a valid selection for param `KIXDB_DBMS` it may be removed in future releases.
+**NOTE** using another DBMS than PostgreSQL in version 12 or 13 is **NOT** recommended. Although `mysql` is yet a valid selection for param `KIXDB_DBMS` it may be removed in future releases. **DO NOT** start new installations of KIX with other DBMS than PostgreSQL. Though MariaDB/MySQL has had a long record in development of web application, we will focus on supporting a single DBMS, which is PostgreSQL, in order to provide a reliable and performing KIX.
 
 
 ## Preparing PostgreSQL DBMS
