@@ -5,7 +5,7 @@
   - see https://docs.docker.com/engine/install/
 - install Docker-Compose as stand alone on your host system
   - see https://docs.docker.com/compose/install/other/
-  - Although newer Docker release include Compose as plugin, not al host operating systems do eomply these new versions. Therefore it is required to have Compose installed as stand alone, not as plugin. 
+  - Although newer Docker release include Compose as plugin, not al host operating systems do eomply these new versions. Therefore it is required to have Compose installed as stand alone, not as plugin.
 
 ### Recommended System Sizing
 
@@ -103,7 +103,7 @@ Choosing this setup uses application ports defined in `BACKEND_PORT`, `FRONTEND_
   - `cd /kix-on-premise/windows`
 - execute stop script
  - `stop.ps1`
-- execute stop script
+- execute update script
  - `update.ps1`
 
 
@@ -163,7 +163,7 @@ KIXDB_HOST=<dbhost>
 
 The data base `<kixdbname>` must be pre-created using utf8 encoding, empty, owned by DB-user `<kixdbuser>` with password `<kixdbuserpw>`. Furthermore DB-user `<kixdbuser>` must have Superuser role assigned in order to activate the pg_trgm extension.
 
-**NOTE** using another DBMS than PostgreSQL in version 12 or 13 is **NOT** recommended. Although `mysql` is yet a valid selection for param `KIXDB_DBMS` it may be removed in future releases.
+**NOTE** using another DBMS than PostgreSQL in version 12 or 13 is **NOT** recommended. Although `mysql` is yet a valid selection for param `KIXDB_DBMS` it may be removed in future releases. **DO NOT** start new installations of KIX with other DBMS than PostgreSQL. Though MariaDB/MySQL has had a long record in development of web application, we will focus on supporting a single DBMS, which is PostgreSQL, in order to provide a reliable and performing KIX.
 
 
 ## Preparing PostgreSQL DBMS
