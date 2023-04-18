@@ -3,8 +3,9 @@
 ## Prerequisites
 - Install Docker on your host system
   - see https://docs.docker.com/engine/install/
-- install Docker-Compose on your host system
-  - see https://docs.docker.com/compose/install/
+- install Docker-Compose as stand alone on your host system
+  - see https://docs.docker.com/compose/install/other/
+  - Although newer Docker release include Compose as plugin, not all host operating systems do employ these new versions. Therefore, it is required to have Compose installed as stand alone, not as plugin.
 
 ### Recommended System Sizing
 
@@ -110,14 +111,9 @@ Choosing this setup uses application ports defined in BACKEND_PORT_SSL, FRONTEND
   - `git pull`
 - change to extracted directory
   - `cd /opt/kix-on-premise/deploy/linux`
-- execute start script
- - `./start.s`
-
-A slighlty shorter way ist to execute the update script. However, if any changes need to be applied to the docker setup, they might be ignored, causing some issues. If you encounter them, please apply the preferred approach.
-- change to extracted directory
-  - `cd kix-on-premise/deploy/linux`
-- execute update script
+- execute update script (checks for new images, downloads them and starts KIX)
  - `./update.sh`
+
 
 
 
