@@ -103,7 +103,7 @@ Choosing this setup uses application ports defined in `BACKEND_PORT`, `FRONTEND_
   - `cd /kix-on-premise/windows`
 - execute stop script
  - `stop.ps1`
-- execute stop script
+- execute update script
  - `update.ps1`
 
 
