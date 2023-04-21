@@ -193,7 +193,23 @@ Also do not forget to enable `port 5432` and `listen_addresses` in your `postgre
 
 
 ---
+# Troubleshooting
 
+### KIX not starting after first install
+If you freshly installed KIX with an **PostgreSQL DBMS** and starting it for the first time, you may encounter an issue 
+that the DB is not initialized properly.
+You may find in your logs an entry similar to this.
 
+`FATAL:  no pg_hba.conf entry for host "172.20.0.4", user "kixdbuser", database "kixdb", SSL off`
 
+This is commonly caused by wrong file permissions of your `postgresql.conf`. 
+Please check your file permissions. Either assign the `postgres` user as owner of the file or check that other have 
+read rights to your file by `chmod o+r postgresql.conf`. 
+After checking the file permissions, stop eventually still running containers with your `stop.sh`.
+Delete the corresponding docker volume of the DB container. **Deleting the docker volume will cause data loss!**
+This is only a valid solution that causes no data loss when you encounter after your first start after installation!
+At last, start your stack again via `start.sh`.
+ 
+
+---
 ...one more thing: how about joining the KIX user community via https://forum.kixdesk.com ? :-)
