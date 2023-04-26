@@ -1,0 +1,10 @@
+# IntelliJ project files
+.idea
+*.iml
+
+# vscode
+.vscode
+
+# ignore local defined build scripts
+docker/_*.sh
+
