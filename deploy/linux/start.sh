@@ -5,7 +5,7 @@ source ./environment
 export $(cut -d= -f1 ./environment | egrep '^[A-Z]')
 
 echo "setting permissions for config files to 664"
-chmod 664 -Rv {backend,db}/*.conf
+chmod -Rv 664 {backend,db}/*.conf
 
 # check if SSP is available
 RESULT=$(docker pull ${REGISTRY}/ssp:${IMAGE_TAG} 2>&1 >/dev/null)
