@@ -5,9 +5,17 @@ source ./environment
 export $(cut -d= -f1 ./environment | egrep '^[A-Z]')
 
 # check if SSP is available
-RESULT=$(docker pull ${REGISTRY}/ssp:${IMAGE_TAG} 2>&1 > /dev/null)
+RESULT=$(docker pull ${REGISTRY}/ssp:${IMAGE_TAG} 2>&1 >/dev/null)
 if [ $? == 0 ]; then
-   export COMPOSE_FILE=docker-compose.yml:docker-compose_ssp.yml
+  export COMPOSE_FILE=docker-compose.yml:docker-compose_ssp.yml
 fi
 
-docker-compose -p ${NAME} down
+# check which compose v2 is available
+COMPOSE_V2_NOT_FOUND=$(docker compose version 2>&1 | grep -ci "'compose' is not a docker command")
+
+# stop KIX stack
+if [ "$COMPOSE_V2_NOT_FOUND" -eq "0" ]; then
+  docker compose -p ${NAME} down
+else
+  docker-compose -p ${NAME} down
+fi
