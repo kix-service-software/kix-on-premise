@@ -47,6 +47,8 @@ FRONTEND_PORT_SSL=20444
 # enable Kerberos SSO
 #SSO_ENABLED=true
 
+# enable Kerberos SSO in SSP
+#SSO_ENABLED_SSP=true
 
 # frontend logging (0=ERROR, 1=WARNING, 2=INFO, 3=DEBUG)
 LOG_LEVEL=2
