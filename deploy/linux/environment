@@ -61,6 +61,15 @@ LOG_LEVEL=2
 SSP_PORT=20002
 SSP_PORT_SSL=20445
 
+# --------------------------------------------------------
+# Self Service Portal (Legacy) service configuration (if available)
+# --------------------------------------------------------
+# Will be deprecated in a future release!
+
+# the port on the docker host system where the ssp service is listening
+SSP_LEGACY_PORT=20003
+SSP_LEGACY_PORT_SSL=20446
+
 # --------------------------------------------------
 # DB service configuration
 # --------------------------------------------------
