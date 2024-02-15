@@ -31,7 +31,7 @@ We recommend a docker host with
 
 ## Get Docker Environment Configuration
 - get initial docker environment setup
-  - `git clone https://github.com/cape-it/kix-on-premise.git`
+  - `git clone https://github.com/kix-service-software/kix-on-premise.git`
 - change to extracted directory
   - `cd kix-on-premise/deploy/windows`
 
