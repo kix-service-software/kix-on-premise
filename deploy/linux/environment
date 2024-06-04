@@ -9,7 +9,7 @@ REGISTRY=docker-registry.kixdesk.com/public
 #REGISTRY=docker-registry.kixdesk.com/customers/<YOURREPOSITORYIDHERE>
 
 # the image tag to use for all application images
-IMAGE_TAG=stable
+IMAGE_TAG=dev
 
 # name of the application stack (you need to change this if you want to deploy multiple KIX applications, each one has to have it's own name)
 NAME=kix
