@@ -67,11 +67,8 @@ The repository ID is sent to you by E-mail, after your subscribed to KIX Pro.
 
 ### SSL-Setup
 (1) Start with placing your certificate information into the docker environment structure
-- copy your certificate to file `proxy/ssl/certs/server.crt`
+- copy your certificate or your certificate chain to file `proxy/ssl/certs/server.crt`
 - copy your key to file `proxy/ssl/certs/server.key`
-- in case you need a ca-bundle
-  - create directory `proxy/ssl/certs/ca-bundle` and copy your ca-bundle files into it
-  - uncomment line with `ssl_trusted_certificate` from config `proxy/ssl/ssl.conf`
 
 (2a) Using SSL **instead** of non-SSL
 - disable all server entries in `proxy/non-ssl.conf` (by comment `#`)
