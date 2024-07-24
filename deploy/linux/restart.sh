@@ -7,12 +7,6 @@ export $(cut -d= -f1 ./environment | egrep '^[A-Z]')
 echo "setting permissions for config files to 664"
 chmod -Rv 664 {backend,db}/*.conf
 
-# check if SSP is available
-RESULT=$(docker pull ${REGISTRY}/ssp:${IMAGE_TAG} 2>&1 >/dev/null)
-if [ $? == 0 ]; then
-  export COMPOSE_FILE=docker-compose.yml:docker-compose_ssp.yml
-fi
-
 # check which compose v2 is available
 COMPOSE_V2_NOT_FOUND=$(docker compose version 2>&1 | grep -ci "'compose' is not a docker command")
 

@@ -3,13 +3,7 @@
 }
 
 
-docker pull $env:REGISTRY/ssp:$env:IMAGE_TAG 2>&1>$null
-if($?) {
-    Set-Item -path "env:COMPOSE_FILE" -value "docker-compose.yml:docker-compose_ssp.yml" -Force;
-}
-else {
-  Set-Item -path "env:COMPOSE_FILE" -value "docker-compose.yml" -Force;
-}
+Set-Item -path "env:COMPOSE_FILE" -value "docker-compose.yml" -Force;
 
 echo $env:COMPOSE_FILE;
 
