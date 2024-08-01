@@ -9,7 +9,7 @@ REGISTRY=docker-registry.kixdesk.com/public
 #REGISTRY=docker-registry.kixdesk.com/customers/<YOURREPOSITORYIDHERE>
 
 # the image tag to use for all application images
-IMAGE_TAG=dev
+IMAGE_TAG=stable
 
 # name of the application stack (you need to change this if you want to deploy multiple KIX applications, each one has to have it's own name)
 NAME=kix
@@ -60,15 +60,6 @@ LOG_LEVEL=2
 # the port on the docker host system where the ssp service is listening
 SSP_PORT=20002
 SSP_PORT_SSL=20445
-
-# --------------------------------------------------------
-# Self Service Portal (Legacy) service configuration (if available)
-# --------------------------------------------------------
-# Will be deprecated in a future release!
-
-# the port on the docker host system where the ssp service is listening
-SSP_LEGACY_PORT=20003
-SSP_LEGACY_PORT_SSL=20446
 
 # --------------------------------------------------
 # DB service configuration
