@@ -8,3 +8,5 @@
 # ignore local scripts
 _*.sh
 
+# ignore test results
+/test/results
