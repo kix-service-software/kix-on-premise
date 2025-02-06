@@ -8,3 +8,6 @@
 # ignore local scripts
 _*.sh
 
+# secrets
+.*.secret
+
