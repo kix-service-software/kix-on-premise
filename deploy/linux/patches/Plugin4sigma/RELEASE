@@ -1,0 +1,8 @@
+PRODUCT = Plugin4sigma
+VERSION = 18
+DESCRIPTION = 'Plugin for customer 4sigma GmbH'
+BUILDDATE = Fri, 06 Sep 2024 15:14:12 +0200
+BUILDHOST = git.intra.cape-it.de
+BUILDNUMBER = 3
+PATCHNUMBER = 0
+REQUIRES =
