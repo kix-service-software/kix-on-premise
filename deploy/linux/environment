@@ -3,10 +3,10 @@
 # --------------------------------------------------
 
 # the docker registry to use
-#REGISTRY=docker-registry.kixdesk.com/public
+REGISTRY=docker-registry.kixdesk.com/public
 
 # the following applies for KIX Pro customers
-REGISTRY=docker-registry.kixdesk.com/customers/f9aa7d4935bf9c6ee5084973e23dffa4
+#REGISTRY=docker-registry.kixdesk.com/customers/<YOURREPOSITORYIDHERE>
 
 # the image tag to use for all application images
 IMAGE_TAG=stable
@@ -22,7 +22,7 @@ NAME=kix
 INITIAL_ADMIN_PW=
 
 # the port on the docker host system where the backend service is listening
-BACKEND_PORT=3000
+BACKEND_PORT=20000
 BACKEND_PORT_SSL=20443
 
 # database connection (see below)
@@ -41,7 +41,7 @@ KIXDB_PASSWORD=kix
 # --------------------------------------------------
 
 # the port on the docker host system where the frontend service is listening
-FRONTEND_PORT=3001
+FRONTEND_PORT=20001
 FRONTEND_PORT_SSL=20444
 
 # enable Kerberos SSO
@@ -58,7 +58,7 @@ LOG_LEVEL=2
 # --------------------------------------------------------
 
 # the port on the docker host system where the ssp service is listening
-SSP_PORT=3002
+SSP_PORT=20002
 SSP_PORT_SSL=20445
 
 # --------------------------------------------------
