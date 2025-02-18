@@ -15,7 +15,7 @@ services:
       - ${BACKEND_PORT_SSL:-8443}:8443
       - ${SSP_PORT_SSL:-9443}:9443
     env_file:
-      - environment
+      - .env
     volumes:
       - ./proxy/ssl:/etc/nginx/conf.d/ssl
       - ./proxy/non-ssl.conf:/etc/nginx/conf.d/non-ssl.conf
@@ -31,7 +31,7 @@ services:
     depends_on:
       - redis
     env_file:
-      - environment
+      - .env
     volumes:
       - ./backend:/opt/kix/conf.d
       - shared:/mnt/shared
@@ -55,7 +55,7 @@ services:
       - NOTIFICATION_URL=http://frontend:3000/notifications
       - BACKEND_API_URL=http://backend:8080/api/v1
     env_file:
-      - environment
+      - .env
     volumes:
       - shared:/mnt/shared
       - frontend:/mnt/data
@@ -68,7 +68,7 @@ services:
     hostname: db
     command: ["postgres", "-c", "config_file=/etc/postgresql.conf"]
     env_file:
-      - environment
+      - .env
     volumes:
       - db:/var/lib/postgresql/data
       - ./db/postgresql.conf:/etc/postgresql.conf
