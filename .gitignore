@@ -10,3 +10,7 @@ _*.sh
 
 # ignore test results
 /test/results
+
+# secrets
+.*.secret
+
