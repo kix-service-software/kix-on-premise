@@ -40,6 +40,7 @@ services:
       options:
         max-size: "100m"
         max-file: "5"
+    stop_grace_period: ${STOP_GRACE_PERIOD:-60s}
 
   frontend:
     image: ${REGISTRY}/frontend:${IMAGE_TAG}
@@ -62,6 +63,7 @@ services:
     logging:
       options:
         max-size: "100m"
+    stop_grace_period: ${STOP_GRACE_PERIOD:-60s}
 
   db:
     image: ${REGISTRY}/db:${IMAGE_TAG}
@@ -73,6 +75,7 @@ services:
       - db:/var/lib/postgresql/data
       - ./db/postgresql.conf:/etc/postgresql.conf
     shm_size: '2gb'
+    stop_grace_period: ${STOP_GRACE_PERIOD:-60s}
 
 
   redis:
