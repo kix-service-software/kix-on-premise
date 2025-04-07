@@ -14,6 +14,9 @@ IMAGE_TAG=stable
 # name of the application stack (you need to change this if you want to deploy multiple KIX applications, each one has to have it's own name)
 NAME=kix
 
+# specifies how long docker must wait when attempting to stop a container, before sending SIGKILL. It's specified as a duration (see https://docs.docker.com/reference/compose-file/extension/#specifying-durations).
+STOP_GRACE_PERIOD=60s
+
 # --------------------------------------------------
 # backend service configuration
 # --------------------------------------------------
