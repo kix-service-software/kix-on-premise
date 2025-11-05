@@ -7,12 +7,14 @@ export $(cut -d= -f1 ./environment | egrep '^[A-Z]')
 echo "setting permissions for config files to 664"
 chmod -Rv 664 {backend,db}/*.conf
 
-# check which compose v2 is available
-COMPOSE_V2_NOT_FOUND=$(docker compose version 2>&1 | grep -ci "'compose' is not a docker command")
-
 # restart KIX stack
-if [ "$COMPOSE_V2_NOT_FOUND" -eq "0" ]; then
+if docker compose version &>/dev/null; then
   docker compose -p ${NAME} restart $1
 else
-  docker-compose -p ${NAME} restart $1
+  if docker-compose version &>/dev/null; then
+    docker-compose -p ${NAME} restart $1
+  else
+    echo "docker compose is missing, see documentation: https://docs.kixdesk.com/start/de/administration/installation.html"
+    exit 1
+  fi
 fi
