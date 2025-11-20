@@ -4,11 +4,14 @@
 source ./environment
 export $(cut -d= -f1 ./environment | egrep '^[A-Z]')
 
-# check which compose v2 is available
-COMPOSE_V2_NOT_FOUND=$(docker compose version 2>&1 | grep -ci "'compose' is not a docker command")
-
-if [ "$COMPOSE_V2_NOT_FOUND" -eq "0" ]; then
+# stop KIX stack
+if docker compose version &>/dev/null; then
   docker compose -p ${NAME} logs --follow
 else
-  docker-compose -p ${NAME} logs --follow
+  if docker-compose version &>/dev/null; then
+    docker-compose -p ${NAME} logs --follow
+  else
+    echo "docker compose is missing, see documentation: https://docs.kixdesk.com/start/de/administration/installation.html"
+    exit 1
+  fi
 fi
