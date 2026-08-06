@@ -71,19 +71,15 @@ The repository ID is sent to you by E-mail, after your subscribed to KIX Pro.
 - copy your key to file `proxy/ssl/certs/server.key`
 
 (2a) Using SSL **instead** of non-SSL
-- disable all server entries in `proxy/non-ssl.conf` (by comment `#`)
-- enable all server entries in `proxy/ssl.conf` (by removing `#`)
+- comment out the `non-ssl.conf` line in the `docker-compose.yml` by adding a leading `#`
+- uncomment the `ssl.conf` line in the `docker-compose.yml` by removing the leading `#`
 
-Choosing this setup uses application ports defined in `BACKEND_PORT`, `FRONTEND_PORT`, `SSP_PORT` as drop-in replacement.
+Choosing this setup uses the _SSL application ports defined in the `environment` file.
 
-(2b) Using SSL **additionally** to non-SSL
-- enable all server entries in `proxy/ssl.conf` (by removing `#`)
-- change the port setting in `proxy/ssl.conf`
-  - from `80` to `443`
-  - from `8080` to `8443`
-  - from `9080` to `9443`
+(2b) Using SSL **in addition** to non-SSL
+- uncomment the `non-ssl.conf` and `ssl.conf` lines in the `docker-compose.yml` by removing the leading `#`
 
-Choosing this setup uses application ports defined in BACKEND_PORT_SSL, FRONTEND_PORT_SSL, SSP_PORT_SSL in addition to the non-SSL ports.
+Choosing this setup uses application all application ports defined in the `environment` file.
 
 ---
 ## Running KIX
@@ -153,7 +149,7 @@ The following services use volumes created on the first startup to store their p
 
 ---
 
-# Using Another Data Base System
+# Using Another Database System
 
 If you prefer using KIX with another database or an existing DB-Server, than the provided in this setup you may do so. In order to use another DBMS following settings in your `environment` file must be changed according to your needs **before KIX ist started the first time** (!). During the first startup the DB-connection is written permanently into the backend service. If you missed that point, just remove alle existing containers (which includes data as well) and start over.
 
@@ -167,7 +163,7 @@ KIXDB_HOST=<dbhost>
 
 The data base `<kixdbname>` must be pre-created using utf8 encoding, empty, owned by DB-user `<kixdbuser>` with password `<kixdbuserpw>`. Furthermore DB-user `<kixdbuser>` must have Superuser role assigned in order to activate the pg_trgm extension.
 
-**NOTE** using another DBMS than PostgreSQL in version 12 or 13 is **NOT** recommended. Although `mysql` is yet a valid selection for param `KIXDB_DBMS` it may be removed in future releases.
+**NOTE** using another DBMS than PostgreSQL in version 15 is **NOT** recommended. Although `mysql` is yet a valid selection for param `KIXDB_DBMS` it may be removed in future releases.
 
 
 ## Preparing PostgreSQL DBMS
